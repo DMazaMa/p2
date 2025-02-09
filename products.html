@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Copperplate', serif;
+            color: #e0e0e0;
+            background-color: #1B2833;
+            line-height: 2;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #2B3A45;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Figtree', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e0e0e0;
+            text-transform: uppercase;
+            margin-left: 20px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-left: auto;
+            margin-right: 20px;
+            gap: 10px; /* Separación entre los enlaces */
+        }
+
+
+        nav a {
+            display: inline-block; /* Asegura que cada enlace se comporte como un bloque */
+            color: #e0e0e0;
+            text-decoration: none;
+            font-family: 'Figtree', sans-serif;
+            font-weight: bold;
+            padding: 8px 12px;
+            margin: 0;
+            background: #2B3A45;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+
+        nav a:hover {
+            background: #3E4D5B;
+        }
+
+        section {
+            width: 90%;
+            margin: 100px auto 40px auto;
+            padding: 30px;
+            background: #2B3A45;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-title {
+            font-family: 'Figtree', sans-serif;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sub-section-title {
+            font-family: 'Figtree', sans-serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .product-item, .lab-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .product-item img, .lab-item img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-item a, .lab-item a {
+            font-family: 'Figtree', sans-serif;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .product-item a:hover, .lab-item a:hover {
+            color: #ffffff;
+        }
+        .dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #2B3A45;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 320px;
+    top: 40px;
+    right: 0;
+    z-index: 20;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+.dropdown-content p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.dropdown-content a {
+    color: #76baff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    color: #9ad0ff;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+form input, form textarea {
+    background: #333;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+form button {
+    background: #76baff;
+    color: #121a21;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #9ad0ff;
+}
+table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: #2B3A45; /* Mismo color que la burbuja */
+    }
+
+    th, td {
+        border: 1px solid #1B2833; /* Color de fondo para que las líneas sean poco visibles */
+        padding: 12px;
+        text-align: left;
+        font-family: 'Figtree', sans-serif;
+    }
+
+    th {
+        text-align: center;
+        font-size: 1.3rem;
+        color: #e0e0e0;
+    }
+
+    td {
+        color: #e0e0e0;
+    }
+
+    .product-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .product-item img {
+        width: 100px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .product-item a {
+        color: #e0e0e0;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .product-item a:hover {
+        color: #ffffff;
+    }
+
+    .product-price {
+        text-align: right;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MAZASHOTS</h1>
+        <nav>
+            <a href="who.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <div class="dropdown">
+                <a id="contact-toggle">Contact</a>
+                <div class="dropdown-content">
+                    <p><strong>Diego de Mazarredo Martín</strong></p>
+                    <p>Photographer | ᴍᴀᴢᴀꜱʜᴏᴛꜱ</p>
+                    <p>𝘽𝙖𝙨𝙚𝙙 𝙞𝙣 𝙈𝙖𝙙𝙧𝙞𝙙, 𝙎𝙥𝙖𝙞𝙣</p>
+                    <p>35𝘮𝘮 𝘴𝘵𝘳𝘦𝘦𝘵 𝘱𝘩𝘰𝘵𝘰𝘨𝘳𝘢𝘱𝘩er</p>
+                    <p>📧 Email: <a href="mailto:202109119@alu.comillas.edu">202109119@alu.comillas.edu</a></p>
+                    <p>📸 Instagram: <a href="https://www.instagram.com/mazashots/" target="_blank">View Portfolio</a></p>
+                    <p>🌟 Experience: 3 years</p>
+            
+                    <!-- Formulario de contacto -->
+                    <form action="#" method="post">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <a href="#">Products</a>
+            <a href="instagram.html">Instagram</a>
+        </nav>
+    </header>
+
+    <section>
+            <!-- Tabla de productos -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2" class="sub-section-title">FILM LAB</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="product-info">
+                    <div class="product-item">
+                        <img src="1826.png" alt="1826 Film Lab">
+                        <a href="https://1826filmlab.com/" target="_blank">1826 Film Lab</a>
+                    </div>
+                </td>
+                <td class="product-price">€20 per roll development</td>
+            </tr>
+        </tbody>
+
+        <thead>
+            <tr>
+                <th colspan="2" class="sub-section-title">FILM</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="product-info">
+                    <div class="product-item">
+                        <img src="portra400.png" alt="Kodak Portra 400">
+                        <a href="https://lapeliculera.com/producto/carrete-kodak-portra-400-35mm-36-exp/" target="_blank">Carrete Kodak Portra 400 35mm 36 exp</a>
+                    </div>
+                </td>
+                <td class="product-price">€15.95</td>
+            </tr>
+            <tr>
+                <td class="product-info">
+                    <div class="product-item">
+                        <img src="portra800.png" alt="Kodak Portra 800">
+                        <a href="https://lapeliculera.com/producto/carrete-kodak-portra-800-35mm-36-exp/" target="_blank">Carrete Kodak Portra 800 35mm 36 exp</a>
+                    </div>
+                </td>
+                <td class="product-price">€18.50</td>
+            </tr>
+            <tr>
+                <td class="product-info">
+                    <div class="product-item">
+                        <img src="p3200tmax.png" alt="Kodak T-Max 3200">
+                        <a href="https://lapeliculera.com/producto/carrete-kodak-t-max-3200-35mm-36-exp/" target="_blank">Carrete Kodak T-Max 3200 35mm 36 exp</a>
+                    </div>
+                </td>
+                <td class="product-price">€14.95</td>
+            </tr>
+            <tr>
+                <td class="product-info">
+                    <div class="product-item">
+                        <img src="cine800.png" alt="CineStill 800T">
+                        <a href="https://lapeliculera.com/producto/carrete-cinestill-800t-35mm/" target="_blank">Carrete CineStill 800T 35mm</a>
+                    </div>
+                </td>
+                <td class="product-price">€16.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    </section>
+    <script>
+        const contactToggle = document.getElementById('contact-toggle');
+        const dropdown = document.querySelector('.dropdown');
+    
+        contactToggle.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>

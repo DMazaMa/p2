@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazashots</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Copperplate', serif;
+            color: #e0e0e0;
+            background-color: #1B2833;
+            line-height: 2;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #2B3A45;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Figtree', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e0e0e0;
+            text-transform: uppercase;
+            margin-left: 20px;
+        }
+
+        nav {
+            margin-left: auto;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav a {
+            font-family: 'Figtree', sans-serif;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            background: #2B3A45;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #3E4D5B;
+        }
+
+        section {
+            width: 90%;
+            margin: 100px auto 40px auto;
+            padding: 30px;
+            background: #2B3A45;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery h3 {
+            margin-top: 10px;
+            font-family: 'Figtree', sans-serif;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #e0e0e0;
+        }
+        .dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #2B3A45;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 320px;
+    top: 40px;
+    right: 0;
+    z-index: 20;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+.dropdown-content p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.dropdown-content a {
+    color: #76baff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    color: #9ad0ff;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+form input, form textarea {
+    background: #333;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+form button {
+    background: #76baff;
+    color: #121a21;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #9ad0ff;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MAZASHOTS</h1>
+        <nav>
+            <a href="who.html">Home</a>
+            <a href="#">Portfolio</a>
+            <div class="dropdown">
+                <a id="contact-toggle">Contact</a>
+                <div class="dropdown-content">
+                    <p><strong>Diego de Mazarredo Martín</strong></p>
+                    <p>Photographer | ᴍᴀᴢᴀꜱʜᴏᴛꜱ</p>
+                    <p>𝘽𝙖𝙨𝙚𝙙 𝙞𝙣 𝙈𝙖𝙙𝙧𝙞𝙙, 𝙎𝙥𝙖𝙞𝙣</p>
+                    <p>35𝘮𝘮 𝘴𝘵𝘳𝘦𝘦𝘵 𝘱𝘩𝘰𝘵𝘰𝘨𝘳𝘢𝘱𝘩er</p>
+                    <p>📧 Email: <a href="mailto:202109119@alu.comillas.edu">202109119@alu.comillas.edu</a></p>
+                    <p>📸 Instagram: <a href="https://www.instagram.com/mazashots/" target="_blank">View Portfolio</a></p>
+                    <p>🌟 Experience: 3 years</p>
+            
+                    <!-- Formulario de contacto -->
+                    <form action="#" method="post">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <a href="products.html">Products</a>
+            <a href="instagram.html">Instagram</a>
+        </nav>
+    </header>
+
+    <section>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="14403-1-CINESTILL-FILM-scan-30.jpg" alt="Motorbike City">
+                <h3>Motorbike City: New York 2022</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="14403-2-KODAK-PORTRA-scan-32.jpg" alt="Neon Stars">
+                <h3>Neon Stars: New York 2022</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="14403-4-KODAK-TMAX-scan-33.jpg" alt="Nightlife">
+                <h3>Nightlife: New York 2022</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="17701-1-KODAK-PORTRA-scan-29.jpg" alt="Retirement">
+                <h3>Retirement: Paris 2023</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="18018-1-KODAK-PORTRA-scan-9.jpg" alt="Life Passing">
+                <h3>Life Passing: Rome 2023</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="18018-1-KODAK-PORTRA-scan-13.jpg" alt="Kids Waiting">
+                <h3>Kids Waiting: Rome 2023</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="18018-1-KODAK-PORTRA-scan-35.jpg" alt="Girl in White">
+                <h3>Girl in White: Rome 2023</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="18018-1-KODAK-PORTRA-scan-38.jpg" alt="Grandma">
+                <h3>Grandma: Madrid 2024</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="18402-2-KODAK-PORTRA-scan-12.jpg" alt="Oh Christ!">
+                <h3>Oh Christ!: Mexico 2024</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="18402-3-KODAK-PORTRA-scan-23.jpg" alt="Call it Cadillac">
+                <h3>Call it Cadillac: San Francisco 2023</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="18402-3-KODAK-PORTRA-scan-25.jpg" alt="Rock it">
+                <h3>Rock it: San Francisco 2023</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="22322-1-scan-17.jpg" alt="SELFIEEE">
+                <h3>SELFIEEE: Madrid 2023</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="22322-1-scan-25.jpg" alt="Long time coming">
+                <h3>Long time coming: Madrid 2022</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="22322-1-scan-32.jpg" alt="Western">
+                <h3>Western: Oporto 2024</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="22322-1-scan-37.jpg" alt="On time">
+                <h3>On time: Oporto 2024</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="22655-3-scan-06.jpg" alt="Perspective">
+                <h3>Perspective: Oporto 2024</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="24260-1-scan-19.jpg" alt="Chosen">
+                <h3>Chosen: Santander 2024</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="24260-1-scan-31.jpg" alt="Well payed">
+                <h3>Well payed: Venice 2024</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="24260-1-scan-32.jpg" alt="Layers">
+                <h3>Layers: Venice 2024</h3>
+            </div>
+        </div>
+    </section>
+    <script>
+        const contactToggle = document.getElementById('contact-toggle');
+        const dropdown = document.querySelector('.dropdown');
+    
+        contactToggle.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>
