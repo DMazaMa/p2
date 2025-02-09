@@ -37,6 +37,10 @@ La página web está diseñada para destacar la obra fotográfica de Mazashots, 
   
 ---
 
+## Organización
+
+-Para próximos proyectos se tendrá en cuenta que las ímagenes deberían haberse localizado en una carpeta propia. No se ha aplicado a este proyecto ya que el código estaba muy desarrollado ya.
+
 ## Cómo Ejecutar el Proyecto Localmente
 
 1. Clona este repositorio:
@@ -46,4 +50,4 @@ La página web está diseñada para destacar la obra fotográfica de Mazashots, 
 
    cd p2
 
-3. Abre el archivo who.html en tu navegador.
+3. Abre el archivo **who.html** en tu navegador.
