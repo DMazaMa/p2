@@ -42,3 +42,8 @@ La página web está diseñada para destacar la obra fotográfica de Mazashots, 
 1. Clona este repositorio:
    ```bash
    git clone https://github.com/DMazaMa/p2.git
+2. Navega hasta la carpeta del proyecto:
+
+   cd p2
+
+3. Abre el archivo who.html en tu navegador.
